@@ -1,0 +1,4 @@
+.settings/** linguist-vendored
+endpoint-libs/libgameserver-v1/gameserver/** linguist-vendored
+gwt-unitCache/** linguist-vendored
+/war/WEB-INF/** linguist-vendored
