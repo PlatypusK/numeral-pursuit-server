@@ -1,0 +1,833 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://numeralpursuit.appspot.com/_ah/api",
+  "name" : "gameserver",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://numeralpursuit.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "gameserver.gameServerEndpoint.login" : {
+      "path" : "login",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.login",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.removeAllFinishedGames" : {
+      "path" : "allfinishedgames",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.removeAllFinishedGames",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.updateGame" : {
+      "path" : "gameupdate",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.updateGame",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.updateSettings" : {
+      "path" : "successcode",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.updateSettings",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.forfeit" : {
+      "path" : "forfeit",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.forfeit",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.getRunningGamesList" : {
+      "path" : "gameinfocollection",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.getRunningGamesList",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.sendChatMessage" : {
+      "path" : "sendChatMessage",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.sendChatMessage",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.getPublicUserId" : {
+      "path" : "publicuid",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.getPublicUserId",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.fetchSettings" : {
+      "path" : "fetchSettings",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.fetchSettings",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.addFriend" : {
+      "path" : "addFriend",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.addFriend",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.requestGameUpdate" : {
+      "path" : "requestGameUpdate",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.requestGameUpdate",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.registerForRandomGame" : {
+      "path" : "registerForRandomGame",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.registerForRandomGame",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.unregisterForRandomGame" : {
+      "path" : "unregisterForRandomGame",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.unregisterForRandomGame",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.createFriendlyGame" : {
+      "path" : "createFriendlyGame",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.createFriendlyGame",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.fetchPlayerNicks" : {
+      "path" : "fetchPlayerNicks",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.fetchPlayerNicks",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.fetchFinishedGames" : {
+      "path" : "fetchFinishedGames",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.fetchFinishedGames",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.removeGameFromActive" : {
+      "path" : "gamefromactive",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.removeGameFromActive",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.removeFriend" : {
+      "path" : "friend",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.removeFriend",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.getNewFriend" : {
+      "path" : "successcode",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.getNewFriend",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.inviteFriendlyGame" : {
+      "path" : "inviteFriendlyGame",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.inviteFriendlyGame",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "gameserver.gameServerEndpoint.getFriends" : {
+      "path" : "frienddatacollection",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com" ],
+      "clientIds" : [ "262677428829-4nhaq30bc36boltoadpquu5vsod1frgq.apps.googleusercontent.com", "262677428829-sugk98qn3o1ainutokmor78khbsipdt5.apps.googleusercontent.com", "262677428829-l20ocajphhvknbg7tm2vth9kkdos0t5f.apps.googleusercontent.com", "262677428829-9mimf5vo5qsja4c2kbbm6bj373pmt145.apps.googleusercontent.com", "262677428829-tjrusfcnhj4lus15mloasqmfh4mv8pe8.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.platypus.gameserver.GameServerEndpoint.getFriends",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "RegIdCGM" : {
+        "id" : "RegIdCGM",
+        "type" : "object",
+        "properties" : {
+          "regId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Settings" : {
+        "id" : "Settings",
+        "type" : "object",
+        "properties" : {
+          "notifyGameUpdate" : {
+            "type" : "boolean"
+          },
+          "notifyGameRequest" : {
+            "type" : "boolean"
+          },
+          "notifyGameChatUpdates" : {
+            "type" : "boolean"
+          },
+          "notifyFriendChatUpdates" : {
+            "type" : "boolean"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "opacity" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "userId" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "SuccessCode" : {
+        "id" : "SuccessCode",
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "string"
+          }
+        }
+      },
+      "GameUpdate" : {
+        "id" : "GameUpdate",
+        "type" : "object",
+        "properties" : {
+          "gameId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "newGrid" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "moveCorrect" : {
+            "type" : "boolean"
+          },
+          "place" : {
+            "type" : "integer"
+          },
+          "value" : {
+            "type" : "integer"
+          },
+          "whoMoved" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "players" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "format" : "int64"
+            }
+          },
+          "score" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "moveNr" : {
+            "type" : "integer"
+          },
+          "winner" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "forfeitedBy" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "gameTimedOut" : {
+            "type" : "boolean"
+          },
+          "playerTimedOut" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "updateTime" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "maxUpdateTime" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "firstUpdateTime" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "maxGameTime" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "tilesFilled" : {
+            "type" : "integer"
+          },
+          "gameName" : {
+            "type" : "string"
+          },
+          "gameType" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "GameUpdateRequest" : {
+        "id" : "GameUpdateRequest",
+        "type" : "object",
+        "properties" : {
+          "gameId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "userId" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "GameInfo" : {
+        "id" : "GameInfo",
+        "type" : "object",
+        "properties" : {
+          "gameId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "gameName" : {
+            "type" : "string"
+          },
+          "opId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "opNames" : {
+            "type" : "string"
+          },
+          "gameType" : {
+            "type" : "integer"
+          },
+          "result" : {
+            "type" : "integer"
+          },
+          "reasonEnded" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "GameInfoCollection" : {
+        "id" : "GameInfoCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "GameInfo"
+            }
+          }
+        }
+      },
+      "EndpointChatMessage" : {
+        "id" : "EndpointChatMessage",
+        "type" : "object",
+        "properties" : {
+          "gameId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "receiverId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "senderId" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "PublicUId" : {
+        "id" : "PublicUId",
+        "type" : "object",
+        "properties" : {
+          "uid" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "FriendData" : {
+        "id" : "FriendData",
+        "type" : "object",
+        "properties" : {
+          "friendId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "friendNick" : {
+            "type" : "string"
+          },
+          "friendEmail" : {
+            "type" : "string"
+          }
+        }
+      },
+      "FriendlyGameData" : {
+        "id" : "FriendlyGameData",
+        "type" : "object",
+        "properties" : {
+          "id1" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "id2" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "PlayerNicks" : {
+        "id" : "PlayerNicks",
+        "type" : "object",
+        "properties" : {
+          "idOne" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idTwo" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "nickOne" : {
+            "type" : "string"
+          },
+          "nickTwo" : {
+            "type" : "string"
+          }
+        }
+      },
+      "GameListContainer" : {
+        "id" : "GameListContainer",
+        "type" : "object",
+        "properties" : {
+          "list" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "GameInfo"
+            }
+          }
+        }
+      },
+      "MessageGCM" : {
+        "id" : "MessageGCM",
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          },
+          "publicKey" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "GameInviteData" : {
+        "id" : "GameInviteData",
+        "type" : "object",
+        "properties" : {
+          "senderId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "receiverId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "maxTimeToAnswer" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "FriendDataCollection" : {
+        "id" : "FriendDataCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "FriendData"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.platypus.gameserver.GameServerEndpoint.login" : {
+        "request" : {
+          "$ref" : "RegIdCGM"
+        },
+        "response" : {
+          "$ref" : "Settings"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.removeAllFinishedGames" : {
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.updateGame" : {
+        "request" : {
+          "$ref" : "GameUpdate"
+        },
+        "response" : {
+          "$ref" : "GameUpdate"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.updateSettings" : {
+        "request" : {
+          "$ref" : "Settings"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.forfeit" : {
+        "request" : {
+          "$ref" : "GameUpdateRequest"
+        },
+        "response" : {
+          "$ref" : "GameUpdate"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.getRunningGamesList" : {
+        "response" : {
+          "$ref" : "GameInfoCollection"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.sendChatMessage" : {
+        "request" : {
+          "$ref" : "EndpointChatMessage"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.getPublicUserId" : {
+        "response" : {
+          "$ref" : "PublicUId"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.fetchSettings" : {
+        "response" : {
+          "$ref" : "Settings"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.addFriend" : {
+        "request" : {
+          "$ref" : "FriendData"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.requestGameUpdate" : {
+        "request" : {
+          "$ref" : "GameUpdateRequest"
+        },
+        "response" : {
+          "$ref" : "GameUpdate"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.registerForRandomGame" : {
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.unregisterForRandomGame" : {
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.createFriendlyGame" : {
+        "request" : {
+          "$ref" : "FriendlyGameData"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.fetchPlayerNicks" : {
+        "request" : {
+          "$ref" : "PlayerNicks"
+        },
+        "response" : {
+          "$ref" : "PlayerNicks"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.fetchFinishedGames" : {
+        "request" : {
+          "$ref" : "GameListContainer"
+        },
+        "response" : {
+          "$ref" : "GameInfoCollection"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.removeGameFromActive" : {
+        "request" : {
+          "$ref" : "GameUpdate"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.removeFriend" : {
+        "request" : {
+          "$ref" : "FriendData"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.getNewFriend" : {
+        "request" : {
+          "$ref" : "MessageGCM"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.inviteFriendlyGame" : {
+        "request" : {
+          "$ref" : "GameInviteData"
+        },
+        "response" : {
+          "$ref" : "SuccessCode"
+        }
+      },
+      "com.platypus.gameserver.GameServerEndpoint.getFriends" : {
+        "response" : {
+          "$ref" : "FriendDataCollection"
+        }
+      }
+    }
+  }
+}

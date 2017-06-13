@@ -1,0 +1,713 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"FWXGb4Q2eZqWRcG8B2Ixrr-vrqQ/b-qO7hv8Oz3-DmFPJY142MZvx38\"",
+ "discoveryVersion": "v1",
+ "id": "gameserver:v1",
+ "name": "gameserver",
+ "version": "v1",
+ "description": "This is an API",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://numeralpursuit.appspot.com/_ah/api/",
+ "rpcUrl": "https://numeralpursuit.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "EndpointChatMessage": {
+   "id": "EndpointChatMessage",
+   "type": "object",
+   "properties": {
+    "gameId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "message": {
+     "type": "string"
+    },
+    "receiverId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "senderId": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "FriendData": {
+   "id": "FriendData",
+   "type": "object",
+   "properties": {
+    "friendEmail": {
+     "type": "string"
+    },
+    "friendId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "friendNick": {
+     "type": "string"
+    }
+   }
+  },
+  "FriendDataCollection": {
+   "id": "FriendDataCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "FriendData"
+     }
+    }
+   }
+  },
+  "FriendlyGameData": {
+   "id": "FriendlyGameData",
+   "type": "object",
+   "properties": {
+    "id1": {
+     "type": "string",
+     "format": "int64"
+    },
+    "id2": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "GameInfo": {
+   "id": "GameInfo",
+   "type": "object",
+   "properties": {
+    "gameId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "gameName": {
+     "type": "string"
+    },
+    "gameType": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "opId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "opNames": {
+     "type": "string"
+    },
+    "reasonEnded": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "result": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  },
+  "GameInfoCollection": {
+   "id": "GameInfoCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "GameInfo"
+     }
+    }
+   }
+  },
+  "GameInviteData": {
+   "id": "GameInviteData",
+   "type": "object",
+   "properties": {
+    "maxTimeToAnswer": {
+     "type": "string",
+     "format": "int64"
+    },
+    "receiverId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "senderId": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "GameListContainer": {
+   "id": "GameListContainer",
+   "type": "object",
+   "properties": {
+    "list": {
+     "type": "array",
+     "items": {
+      "$ref": "GameInfo"
+     }
+    }
+   }
+  },
+  "GameUpdate": {
+   "id": "GameUpdate",
+   "type": "object",
+   "properties": {
+    "firstUpdateTime": {
+     "type": "string",
+     "format": "int64"
+    },
+    "forfeitedBy": {
+     "type": "string",
+     "format": "int64"
+    },
+    "gameId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "gameName": {
+     "type": "string"
+    },
+    "gameTimedOut": {
+     "type": "boolean"
+    },
+    "gameType": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "maxGameTime": {
+     "type": "string",
+     "format": "int64"
+    },
+    "maxUpdateTime": {
+     "type": "string",
+     "format": "int64"
+    },
+    "moveCorrect": {
+     "type": "boolean"
+    },
+    "moveNr": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "newGrid": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "place": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "playerTimedOut": {
+     "type": "string",
+     "format": "int64"
+    },
+    "players": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "format": "int64"
+     }
+    },
+    "score": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "tilesFilled": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "updateTime": {
+     "type": "string",
+     "format": "int64"
+    },
+    "value": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "whoMoved": {
+     "type": "string",
+     "format": "int64"
+    },
+    "winner": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "GameUpdateRequest": {
+   "id": "GameUpdateRequest",
+   "type": "object",
+   "properties": {
+    "gameId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "userId": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "MessageGCM": {
+   "id": "MessageGCM",
+   "type": "object",
+   "properties": {
+    "message": {
+     "type": "string"
+    },
+    "publicKey": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "PlayerNicks": {
+   "id": "PlayerNicks",
+   "type": "object",
+   "properties": {
+    "idOne": {
+     "type": "string",
+     "format": "int64"
+    },
+    "idTwo": {
+     "type": "string",
+     "format": "int64"
+    },
+    "nickOne": {
+     "type": "string"
+    },
+    "nickTwo": {
+     "type": "string"
+    }
+   }
+  },
+  "PublicUId": {
+   "id": "PublicUId",
+   "type": "object",
+   "properties": {
+    "uid": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "RegIdCGM": {
+   "id": "RegIdCGM",
+   "type": "object",
+   "properties": {
+    "regId": {
+     "type": "string"
+    }
+   }
+  },
+  "Settings": {
+   "id": "Settings",
+   "type": "object",
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "notifyFriendChatUpdates": {
+     "type": "boolean"
+    },
+    "notifyGameChatUpdates": {
+     "type": "boolean"
+    },
+    "notifyGameRequest": {
+     "type": "boolean"
+    },
+    "notifyGameUpdate": {
+     "type": "boolean"
+    },
+    "opacity": {
+     "type": "number",
+     "format": "float"
+    },
+    "userId": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "SuccessCode": {
+   "id": "SuccessCode",
+   "type": "object",
+   "properties": {
+    "result": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "gameserver.gameServerEndpoint.addFriend": {
+   "id": "gameserver.gameServerEndpoint.addFriend",
+   "parameters": {
+    "resource": {
+     "$ref": "FriendData"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.createFriendlyGame": {
+   "id": "gameserver.gameServerEndpoint.createFriendlyGame",
+   "parameters": {
+    "resource": {
+     "$ref": "FriendlyGameData"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.fetchFinishedGames": {
+   "id": "gameserver.gameServerEndpoint.fetchFinishedGames",
+   "parameters": {
+    "resource": {
+     "$ref": "GameListContainer"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "GameInfoCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.fetchPlayerNicks": {
+   "id": "gameserver.gameServerEndpoint.fetchPlayerNicks",
+   "parameters": {
+    "resource": {
+     "$ref": "PlayerNicks"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "PlayerNicks"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.fetchSettings": {
+   "id": "gameserver.gameServerEndpoint.fetchSettings",
+   "returns": {
+    "$ref": "Settings"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.forfeit": {
+   "id": "gameserver.gameServerEndpoint.forfeit",
+   "parameters": {
+    "resource": {
+     "$ref": "GameUpdateRequest"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "GameUpdate"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.getFriends": {
+   "id": "gameserver.gameServerEndpoint.getFriends",
+   "allowGet": true,
+   "returns": {
+    "$ref": "FriendDataCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.getNewFriend": {
+   "id": "gameserver.gameServerEndpoint.getNewFriend",
+   "allowGet": true,
+   "parameters": {
+    "resource": {
+     "$ref": "MessageGCM"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.getPublicUserId": {
+   "id": "gameserver.gameServerEndpoint.getPublicUserId",
+   "allowGet": true,
+   "returns": {
+    "$ref": "PublicUId"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.getRunningGamesList": {
+   "id": "gameserver.gameServerEndpoint.getRunningGamesList",
+   "allowGet": true,
+   "returns": {
+    "$ref": "GameInfoCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.inviteFriendlyGame": {
+   "id": "gameserver.gameServerEndpoint.inviteFriendlyGame",
+   "parameters": {
+    "resource": {
+     "$ref": "GameInviteData"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.login": {
+   "id": "gameserver.gameServerEndpoint.login",
+   "parameters": {
+    "resource": {
+     "$ref": "RegIdCGM"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Settings"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.registerForRandomGame": {
+   "id": "gameserver.gameServerEndpoint.registerForRandomGame",
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.removeAllFinishedGames": {
+   "id": "gameserver.gameServerEndpoint.removeAllFinishedGames",
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.removeFriend": {
+   "id": "gameserver.gameServerEndpoint.removeFriend",
+   "parameters": {
+    "resource": {
+     "$ref": "FriendData"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.removeGameFromActive": {
+   "id": "gameserver.gameServerEndpoint.removeGameFromActive",
+   "parameters": {
+    "resource": {
+     "$ref": "GameUpdate"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.requestGameUpdate": {
+   "id": "gameserver.gameServerEndpoint.requestGameUpdate",
+   "parameters": {
+    "resource": {
+     "$ref": "GameUpdateRequest"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "GameUpdate"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.sendChatMessage": {
+   "id": "gameserver.gameServerEndpoint.sendChatMessage",
+   "parameters": {
+    "resource": {
+     "$ref": "EndpointChatMessage"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.unregisterForRandomGame": {
+   "id": "gameserver.gameServerEndpoint.unregisterForRandomGame",
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.updateGame": {
+   "id": "gameserver.gameServerEndpoint.updateGame",
+   "parameters": {
+    "resource": {
+     "$ref": "GameUpdate"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "GameUpdate"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gameserver.gameServerEndpoint.updateSettings": {
+   "id": "gameserver.gameServerEndpoint.updateSettings",
+   "parameters": {
+    "resource": {
+     "$ref": "Settings"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "SuccessCode"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}
